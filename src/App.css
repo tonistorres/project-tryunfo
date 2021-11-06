@@ -1,4 +1,16 @@
-.form-style {
-  font-family: ' Franklin Gothic Medium' , ' Arial Narrow' , Arial , sans-serif;
+.App-style {
+  display: flex;
 }
 
+.form-style {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  font-family: ' Franklin Gothic Medium' , ' Arial Narrow' , Arial , sans-serif;
+  width: 50%;
+}
+
+label {
+  display: flex;
+  padding: 0.5% 1%;
+}
