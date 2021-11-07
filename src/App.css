@@ -1,16 +1,45 @@
-.App-style {
+.App-style-form {
   display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .form-style {
-  border: 2px solid black;
+  background-color: #fcec4f;
+  border: 1px solid #b68d2c;
   display: flex;
   flex-direction: column;
   font-family: ' Franklin Gothic Medium' , ' Arial Narrow' , Arial , sans-serif;
-  width: 50%;
+  width: 35%;
+}
+
+.App-style-card {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-style {
+  background-color: #fcec4f;
+  border: 1px solid #b68d2c;
+  display: flex;
+  flex-direction: column;
+  font-family: ' Franklin Gothic Medium' , ' Arial Narrow' , Arial , sans-serif;
+  width: 35%;
 }
 
 label {
   display: flex;
   padding: 0.5% 1%;
+}
+
+span {
+  display: flex;
+  padding: 0.5% 1%;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
 }

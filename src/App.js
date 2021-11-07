@@ -32,10 +32,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App-style">
+      <div>
         <h1>Tryunfo</h1>
-        <Form onInputChange={ this.onInputChange } { ... this.state } />
-        <Card { ... this.state } />
+        <section className="App-style-form">
+          <Form onInputChange={ this.onInputChange } { ...this.state } />
+        </section>
+        <section className="App-style-card">
+          <Card { ...this.state } />
+        </section>
       </div>
     );
   }
