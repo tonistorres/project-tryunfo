@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 
 class Form extends React.Component {
   render() {
-    const { cardName,
+    const {
+      cardName,
       cardDescription,
       cardAttr1,
       cardAttr2,
@@ -22,18 +23,18 @@ class Form extends React.Component {
         <label htmlFor="nome">
           Nome da Carta:
           <input
+            type="text"
+            name="cardName"
             data-testid="name-input"
             value={ cardName }
             onChange={ onInputChange }
-            name="nome"
-            type="text"
           />
         </label>
         <label htmlFor="estadoFavorito">
           Descrição da Carta:
           <textarea
             data-testid="description-input"
-            name="descricaoCarta"
+            name="cardDescription"
             value={ cardDescription }
             onChange={ onInputChange }
             type="text"
@@ -45,7 +46,7 @@ class Form extends React.Component {
             data-testid="attr1-input"
             value={ cardAttr1 }
             onChange={ onInputChange }
-            name="att1"
+            name="cardAttr1"
             type="number"
           />
         </label>
@@ -55,7 +56,7 @@ class Form extends React.Component {
             data-testid="attr2-input"
             value={ cardAttr2 }
             onChange={ onInputChange }
-            name="att2"
+            name="cardAttr2"
             type="number"
           />
         </label>
@@ -65,7 +66,7 @@ class Form extends React.Component {
             data-testid="attr3-input"
             value={ cardAttr3 }
             onChange={ onInputChange }
-            name="att3"
+            name="cardAttr3"
             type="number"
           />
         </label>
@@ -73,7 +74,7 @@ class Form extends React.Component {
           Imagem:
           <input
             data-testid="image-input"
-            name="nome"
+            name="cardImage"
             value={ cardImage }
             onChange={ onInputChange }
             type="text"
@@ -81,7 +82,12 @@ class Form extends React.Component {
         </label>
         <label htmlFor="rare-input">
           Raridade:
-          <select data-testid="rare-input" value={ cardRare } onChange={ onInputChange }>
+          <select
+            data-testid="rare-input"
+            value={ cardRare }
+            name="cardRare"
+            onChange={ onInputChange }
+          >
             <option value="normal">Normal</option>
             <option value="raro">Raro</option>
             <option value="muito raro">Muito Raro</option>
@@ -93,7 +99,7 @@ class Form extends React.Component {
             data-testid="trunfo-input"
             checked={ cardTrunfo }
             onChange={ onInputChange }
-            name="superTriunfo"
+            name="cardTrunfo"
             type="checkbox"
           />
         </label>
