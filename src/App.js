@@ -6,13 +6,13 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      cardName: "",
-      cardDescription: "",
-      cardAttr1: "",
-      cardAttr2: "",
-      cardAttr3: "",
-      cardImage: "",
-      cardRare: "normal",
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '',
+      cardAttr2: '',
+      cardAttr3: '',
+      cardImage: '',
+      cardRare: 'normal',
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
