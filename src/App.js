@@ -16,6 +16,7 @@ class App extends React.Component {
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
+      arrayContainerLetter: [],
     };
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -64,10 +65,10 @@ class App extends React.Component {
       <div>
         <h1>Tryunfo</h1>
         <section className="App-style-form">
-          <Form onInputChange={this.onInputChange} {...this.state} />
+          <Form onInputChange={ this.onInputChange } { ...this.state } />
         </section>
         <section className="App-style-card">
-          <Card {...this.state} />
+          <Card { ...this.state } />
         </section>
       </div>
     );
