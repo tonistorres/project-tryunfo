@@ -8,9 +8,9 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
@@ -60,19 +60,48 @@ class App extends React.Component {
     }
   }
 
-  render() {
-    return (
-      <div>
-        <h1>Tryunfo</h1>
-        <section className="App-style-form">
-          <Form onInputChange={ this.onInputChange } { ...this.state } />
-        </section>
-        <section className="App-style-card">
-          <Card { ...this.state } />
-        </section>
-      </div>
-    );
-  }
+      saveArrayContainerLetter = () => {
+        const { arrayContainerLetter } = this.state;
+        arrayContainerLetter.push(this.state);
+      }
+
+      clearState = () => {
+        this.setState({
+          cardName: '',
+          cardDescription: '',
+          cardAttr1: '0',
+          cardAttr2: '0',
+          cardAttr3: '0',
+          cardImage: '',
+          cardRare: 'normal',
+          cardTrunfo: false,
+          hasTrunfo: false,
+          isSaveButtonDisabled: true,
+        });
+      }
+
+      onSaveButtonClick = () => {
+        this.saveArrayContainerLetter();
+        this.clearState();
+      }
+
+      render() {
+        return (
+          <div>
+            <h1>Tryunfo</h1>
+            <section className="App-style-form">
+              <Form
+                onInputChange={ this.onInputChange }
+                onSaveButtonClick={ this.onSaveButtonClick }
+                { ...this.state }
+              />
+            </section>
+            <section className="App-style-card">
+              <Card { ...this.state } />
+            </section>
+          </div>
+        );
+      }
 }
 
 export default App;
