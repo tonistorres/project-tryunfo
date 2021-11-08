@@ -18,6 +18,7 @@ class Form extends React.Component {
       onInputChange,
       onSaveButtonClick,
     } = this.props;
+
     return (
       <form className="form-style" onSubmit={ this.onSubmit }>
         <label htmlFor="nome">
