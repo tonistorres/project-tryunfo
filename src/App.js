@@ -27,7 +27,7 @@ class App extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [name]: value,
-    }, this.onValidatioButton);
+    }, this.onValidatioButton, this.validationCart);
   }
 
   onValidatioButton() {
@@ -75,14 +75,24 @@ class App extends React.Component {
           cardImage: '',
           cardRare: 'normal',
           cardTrunfo: false,
-          hasTrunfo: false,
-          isSaveButtonDisabled: true,
+          hasTrunfo: true,
+          isSaveButtonDissabled: true,
         });
       }
 
       onSaveButtonClick = () => {
         this.saveArrayContainerLetter();
         this.clearState();
+      }
+
+      validationCart =() => {
+        const { arrayContainerLetter } = this.state;
+        const result = arrayContainerLetter.some((item) => item.cardTrunfo === true);
+        if (result) {
+          this.setState({
+            hasTrunfo: true,
+          });
+        }
       }
 
       render() {
