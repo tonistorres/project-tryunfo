@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import { element } from 'prop-types';
 
 class App extends React.Component {
   constructor() {
@@ -96,6 +97,7 @@ class App extends React.Component {
       }
 
       render() {
+        const { arrayContainerLetter } = this.state;
         return (
           <div>
             <h1>Tryunfo</h1>
@@ -108,6 +110,13 @@ class App extends React.Component {
             </section>
             <section className="App-style-card">
               <Card { ...this.state } />
+            </section>
+            <section>
+              {arrayContainerLetter.map((item) => (
+                <div key={ item.cardName }>
+                  <Card { ...item } />
+                </div>
+              ))}
             </section>
           </div>
         );
