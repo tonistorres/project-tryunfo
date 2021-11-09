@@ -85,6 +85,19 @@ class App extends React.Component {
         this.clearState();
       }
 
+      onClickDelete = (index) => {
+        const { arrayContainerLetter, cardTrunfo } = this.state;
+        const resultFilter = arrayContainerLetter.filter((item, i) => i !== index);
+        this.setState({
+          arrayContainerLetter: resultFilter,
+        });
+        if (cardTrunfo === true) {
+          this.setState({
+            hasTrunfo: false,
+          });
+        }
+      }
+
       validationCart =() => {
         const { arrayContainerLetter } = this.state;
         const result = arrayContainerLetter.some((item) => item.cardTrunfo === true);
@@ -110,11 +123,17 @@ class App extends React.Component {
             <section className="App-style-card">
               <Card { ...this.state } />
             </section>
-            <section>
-              {arrayContainerLetter.map((item) => (
-                <div key={ item.cardName }>
+            <section className="App-container-main-list">
+              {arrayContainerLetter.map((item, index) => (
+                <div key={ item.cardName } className="App-style-list">
                   <Card { ...item } />
-                  <button type="button"> Excluir </button>
+                  <button
+                    type="button"
+                    data-testid="delete-button"
+                    onClick={ () => this.onClickDelete(index) }
+                  >
+                    Excluir
+                  </button>
                 </div>
               ))}
             </section>

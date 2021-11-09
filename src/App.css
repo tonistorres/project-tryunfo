@@ -29,6 +29,19 @@
   width: 35%;
 }
 
+.App-container-main-list {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.App-style-list {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 label {
   display: flex;
   padding: 0.5% 1%;
