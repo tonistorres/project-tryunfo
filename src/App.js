@@ -1,7 +1,6 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
-import { element } from 'prop-types';
 
 class App extends React.Component {
   constructor() {
@@ -115,6 +114,7 @@ class App extends React.Component {
               {arrayContainerLetter.map((item) => (
                 <div key={ item.cardName }>
                   <Card { ...item } />
+                  <button type="button"> Excluir </button>
                 </div>
               ))}
             </section>
