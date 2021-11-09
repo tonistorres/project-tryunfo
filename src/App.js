@@ -87,7 +87,7 @@ class App extends React.Component {
 
       onClickDelete = (item, index) => {
         const { arrayContainerLetter } = this.state;
-        const resultFilter = arrayContainerLetter.filter((item, i) => i !== index);
+        const resultFilter = arrayContainerLetter.filter((_item, i) => i !== index);
         this.setState({
           arrayContainerLetter: resultFilter,
         });
