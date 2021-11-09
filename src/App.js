@@ -85,13 +85,13 @@ class App extends React.Component {
         this.clearState();
       }
 
-      onClickDelete = (index) => {
-        const { arrayContainerLetter, cardTrunfo } = this.state;
+      onClickDelete = (item, index) => {
+        const { arrayContainerLetter } = this.state;
         const resultFilter = arrayContainerLetter.filter((item, i) => i !== index);
         this.setState({
           arrayContainerLetter: resultFilter,
         });
-        if (cardTrunfo === true) {
+        if (item.cardTrunfo) {
           this.setState({
             hasTrunfo: false,
           });
@@ -130,7 +130,7 @@ class App extends React.Component {
                   <button
                     type="button"
                     data-testid="delete-button"
-                    onClick={ () => this.onClickDelete(index) }
+                    onClick={ () => this.onClickDelete(item, index) }
                   >
                     Excluir
                   </button>
